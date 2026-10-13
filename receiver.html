@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Vivido Receiver</title>
+<style>html,body{margin:0;background:#000;height:100%;overflow:hidden}cast-media-player{--background-color:#070b18;--splash-image:url(https://mali-ak.github.io/vivido-site/splash.png);--progress-color:#5cc8ff}</style>
+<script src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+</head><body>
+<cast-media-player></cast-media-player>
+<script>
+  // Vivido yedek web alıcısı: TV'de Vivido uygulaması yoksa yerleşik oynatıcıyla oynatır.
+  const ctx = cast.framework.CastReceiverContext.getInstance();
+  const opts = new cast.framework.CastReceiverOptions();
+  opts.disableIdleTimeout = true;
+  ctx.start(opts);
+</script>
+</body></html>
